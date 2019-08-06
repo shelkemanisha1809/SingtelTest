@@ -24,6 +24,13 @@ public class RoosterTest {
     public void testCanSing() {
         rooster.sing();
         String output = "Cock-a-doodle-doo";
-        assertEquals(output, outContent.toString());
+        assertEquals(output, outContent.toString().replaceAll("\n", "").replaceAll("\r", ""));
+    }
+
+    @Test
+    public void testCanFly() {
+        rooster.fly();
+        String output = "I cannot fly. My wings are clipped";
+        assertEquals(output, outContent.toString().replaceAll("\n", "").replaceAll("\r", ""));
     }
 }
